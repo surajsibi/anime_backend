@@ -22,6 +22,7 @@ import userRouter from "./routes/auth.routes.js"
 import animeRouter from "./routes/anime.routes.js"
 import mangaRouter from "./routes/manga.routes.js"
 import profileRouter from "./routes/user.routes.js"
+import reviewRouter from "./routes/review.routes.js"
 
 
 // declaration 
@@ -30,6 +31,7 @@ app.use("/api/v1/user",userRouter)
 app.use("/api/v1/anime",animeRouter)
 app.use("/api/v1/manga",mangaRouter)
 app.use("/api/v1/profile",profileRouter)
+app.use("/api/v1/review",reviewRouter)
 
 
 export {app}
