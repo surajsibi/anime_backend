@@ -5,7 +5,7 @@ const userSchema = new Schema({
     email:{type:String,required:true,unique:true},
     name:{type:String,required:true},
     password:{type:String,required:true},
-    bookmarkedAnime: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Anime' }],
+    bookmarkedAnime: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Bookmark' }],
     subscription:{
         type:String,
         enum:["free","premium"],
