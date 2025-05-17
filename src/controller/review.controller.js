@@ -95,3 +95,8 @@ export const deleteReview = AsyncHandler(async (req, res, next) => {
 })
 
 
+export const getMyReview = AsyncHandler(async(req,res,next)=>{
+    const review = await Review.find({user:req.user._id}).sort({createdAt:-1})   
+    return res.status(200).json(new ApiResponse(200,review,"my review"))
+})
+

@@ -1,7 +1,8 @@
 import {ApiError} from "../utils/apiError.js";
 import {ApiResponse} from "../utils/apiResponse.js";
 import {AsyncHandler} from "../utils/asyncHandler.js";
-import {User} from "../models/user.model.js";   
+import {User} from "../models/user.model.js"; 
+import { Review } from "../models/review.model.js";  
 
 
 export const getUserProfile = AsyncHandler(async(req,res,next)=>{
@@ -20,3 +21,6 @@ export const getUserProfile = AsyncHandler(async(req,res,next)=>{
     },"user profile"))
 
 })
+
+
+

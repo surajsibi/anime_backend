@@ -53,10 +53,6 @@ export const getAllBookmark = AsyncHandler(async(req,res,next)=>{
 
 
 
-
-
-
-
 export const getUserRecommandation = AsyncHandler(async (req, res, next) => {
     const user = await User.findById(req.user._id)
     const userBookmark = await Bookmark.find({ userId: req.user._id })
@@ -114,5 +110,15 @@ export const removeBookmark = AsyncHandler(async(req,res,next)=>{
     return res.status(200)
     .json(new ApiResponse(200,{},"bookmark deleted successfully"))
 
+})
+
+
+const getMyBookmark = AsyncHandler(async(req,res,next)=>{
+    const user = await User.findById(req.user._id)
+    if(!user) throw new ApiError(404,"user not found")
+        
+        const bookmarks = await Bookmark.find({userId:user._id})
+        return res.status(200)
+        .json(new ApiResponse(200,bookmarks,"bookmarks fetched successfully"))
 })
 
